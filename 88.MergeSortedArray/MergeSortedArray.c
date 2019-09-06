@@ -4,7 +4,7 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
     int ia = m - 1;
     int ib = n - 1;
     int i = nums1Size - 1;
-    for (; i >= 0; i--) {
+    for (; i >= 0; --i) {
         if (ia >= 0 && ib < 0) {
             break;
         }

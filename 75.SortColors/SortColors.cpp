@@ -19,8 +19,7 @@ class Solution {
                 std::swap(nums[i], nums[--two]);
             } else {  // nums[i] == 0
                 assert(nums[i] == 0);
-                ++zero;
-                std::swap(nums[zero], nums[i]);
+                std::swap(nums[++zero], nums[i]);
                 ++i;
             }
         }
