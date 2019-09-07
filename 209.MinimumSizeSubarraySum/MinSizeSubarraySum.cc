@@ -19,6 +19,7 @@ class Solution {
             if(sum >= s)
                 res = std::min(res, r - l + 1);
         }
+        
         if (res == nums.size() + 1) {
             return 0;
         }
