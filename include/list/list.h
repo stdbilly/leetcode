@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <vector>
+using std::vector;
 using std::cout;
 using std::endl;
 
@@ -9,11 +11,11 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
-ListNode* createLinkedList(int arr[], int size) {
-    if (size == 0) return nullptr;
+ListNode* createLinkedList(const vector<int>& arr) {
+    if (arr.size() == 0) return nullptr;
     ListNode* head = new ListNode(arr[0]);
     ListNode* curNode = head;
-    for (int i = 1; i < size; ++i) {
+    for (int i = 1; i < arr.size(); ++i) {
         curNode->next = new ListNode(arr[i]);
         curNode = curNode->next;
     }

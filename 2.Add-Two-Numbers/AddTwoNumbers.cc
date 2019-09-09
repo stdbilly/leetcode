@@ -8,7 +8,7 @@ class Solution {
         ListNode* q = l2;
         ListNode* cur = dummyHead;
         int carry = 0;
-        while (p || q) {
+        while (p || q || carry) {
             int x = p ? p->val : 0;
             int y = q ? q->val : 0;
             int sum = x + y + carry;
@@ -18,9 +18,7 @@ class Solution {
             if (p) p = p->next;
             if (q) q = q->next;
         }
-        if (carry == 1) {
-            cur->next = new ListNode(1);
-        }
+        
         return dummyHead->next;
     }
 };

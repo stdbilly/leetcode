@@ -21,9 +21,8 @@ class Solution {
 
 int main() {
     Solution solution;
-    int arr[5] = {1,2,3,4,5};
-    int size = sizeof(arr)/sizeof(int);
-    ListNode* head = createLinkedList(arr, size);
+    vector<int> arr{1,2,3,4,5};
+    ListNode* head = createLinkedList(arr);
     printLinkedList(head);
     ListNode* head2 = solution.reverseList(head);
     printLinkedList(head2);
