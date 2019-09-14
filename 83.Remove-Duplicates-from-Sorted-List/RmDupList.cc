@@ -1,25 +1,34 @@
-#include "list/list.h"
+#include "list.h"
 
 class Solution {
    public:
     ListNode* deleteDuplicates(ListNode* head) {
+        ListNode dummy(-1);
+        dummy.next = head;
+        ListNode* pre = &dummy;
         ListNode* cur = head;
         while (cur && cur->next) {
-            if (cur->val == cur->next->val) {
-                cur->next = cur->next->next;
-            } else {
+            if (cur->val != cur->next->val) {
+                pre = cur;
                 cur = cur->next;
+            } else {
+                ListNode* delNode = cur->next;
+                cur->next = cur->next->next;
+                delete delNode;
+                delNode = nullptr;
+
+                pre->next = cur;
             }
         }
-        return head;
+        return dummy.next;
     }
 };
 
 int main() {
     Solution solution;
-    int arr[5] = {1, 1, 2, 3, 3};
-    int size = sizeof(arr) / sizeof(int);
-    ListNode* head = createLinkedList(arr, size);
+    vector<int> arr{1, 1, 2, 3, 3};
+    // vector<int> arr{3, 3, 3};
+    ListNode* head = createLinkedList(arr);
     printLinkedList(head);
     ListNode* head2 = solution.deleteDuplicates(head);
     printLinkedList(head2);

@@ -1,5 +1,5 @@
 #include <cassert>
-#include "list/list.h"
+#include "list.h"
 
 // pre和last相差n+1个节点, 当last为NULL时, pre就是要删除节点的前一个节点
 class Solution {

@@ -1,4 +1,4 @@
-#include "list/list.h"
+#include "list.h"
 
 //参考:
 //https://www.cnblogs.com/lichen782/p/leetcode_Reverse_Nodes_in_kGroup.html

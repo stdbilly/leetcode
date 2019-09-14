@@ -11,6 +11,15 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
+void connectListNodes(ListNode* pCurrent, ListNode* pNext) {
+    if (pCurrent == nullptr) {
+        printf("Error to connect two nodes.\n");
+        exit(1);
+    }
+
+    pCurrent->next = pNext;
+}
+
 ListNode* createLinkedList(const vector<int>& arr) {
     if (arr.size() == 0) return nullptr;
     ListNode* head = new ListNode(arr[0]);
